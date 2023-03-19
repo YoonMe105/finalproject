@@ -1,5 +1,5 @@
-function formatDate(timestamp) {
-    let date = new Date(timestamp);
+function formatDate() {
+    let date = new Date();
     let hours = date.getHours();
     if (hours < 10) {
         hours = `0${hours}`;
@@ -20,6 +20,32 @@ function formatDate(timestamp) {
     ];
     let day = days[date.getDay()];
     return `${day} ${hours}:${minutes}`;
+}
+
+function formatdetaildate() {
+    let date = new Date();
+    let day = date.getDate();
+    let year = date.getUTCFullYear();
+
+    let months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ];
+
+    let month = months[date.getMonth()];
+
+    return `${day}  ${month}  ${year}`;
+
 }
 
 function formatDay(timestamp) {
@@ -80,6 +106,7 @@ function displayTemperature(response) {
     let humidityElement = document.querySelector(".humidify");
     let windElement = document.querySelector(".wind");
     let dateElement = document.querySelector(".date");
+    let dayElement = document.querySelector('.day');
     let iconElement = document.querySelector(".icon");
     let realfeelElement = document.querySelector('.realfeel');
     let temperatureminElement = document.querySelector('.temperature-min');
@@ -93,14 +120,14 @@ function displayTemperature(response) {
     descriptionElement.innerHTML = response.data.weather[0].description;
     humidityElement.innerHTML = response.data.main.humidity;
     windElement.innerHTML = Math.round(response.data.wind.speed);
-    dateElement.innerHTML = formatDate(response.data.dt * 1000);
+    dateElement.innerHTML = formatDate();
+    dayElement.innerHTML = formatdetaildate();
     iconElement.setAttribute(
         "src",
         `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
     iconElement.setAttribute("alt", response.data.weather[0].description);
 
-    // console.log(response.data)
     realfeelElement.innerHTML = Math.round(response.data.main.feels_like);
 
     getForecast(response.data.coord);
@@ -116,6 +143,8 @@ function changecity(event) {
     event.preventDefault();
     let cityInputElement = document.querySelector("#inputsearch");
     search(cityInputElement.value);
+
+    cityInputElement.value = "";
 }
 
 

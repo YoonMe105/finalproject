@@ -78,7 +78,8 @@ ul li.temp {
     margin: 5px 0;
 }
 
-ul li .date {
+ul li .date,
+ul li .day {
     font-size: 18px;
 }
 
@@ -123,7 +124,7 @@ ul li .date {
 }
 
 .forecast-temperature-min {
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 .small {
