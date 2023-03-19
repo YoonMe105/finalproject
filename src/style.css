@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
-    /* background-color: steelblue; */
+    background-color: #f4f4f4;
 }
 
 .wrappers {
@@ -15,92 +15,97 @@ body {
 }
 
 .container {
-    width: 700px;
-    background-color: #f4f4f4;
-    border: 1px solid rgba(0, 0, 0, .7);
+    width: 650px;
+    background-color: #a836ad;
+    color: #fff0a4;
+    /* border: 1px solid rgba(0, 0, 0, .5); */
     border-radius: 15px;
-    box-shadow: 5px 0 15px rgba(0, 0, 0, .5);
+    box-shadow: 5px 0 15px #a836ad;
     padding: 15px;
-
-    position: relative;
 }
 
-.fahrenheit-link {
-    background: steelblue;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
+#form {
+    margin: 5px 25px;
+}
+
+#inputsearch {
+    width: 75%;
+    font-size: 18px;
     border: 0;
-    padding: 10px;
+    padding: 5px 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    display: inline-block;
 }
 
-.fahrenheit-link:hover,
-.fahrenheit-link:focus {
+
+
+.search-btn {
+    width: 20%;
+    background-color: #a836ad;
+    color: #fff;
+    padding: 8px 0;
+    border: 1px solid #f1f1f1;
+    border-radius: 15px;
+
+    margin-left: 20px;
+
+    transition: all .5s;
+}
+
+.search-btn:hover {
     background: transparent;
-    color: #000;
-    border: 1px solid steelblue;
+    color: #f16896;
+    border: 1px solid #f16896;
+
 }
 
 .city {
-    font-size: 25px;
-    font-weight: 400;
-    text-align: center;
-}
-
-.update {
-    text-align: center;
-    margin-right: 10px;
-}
-
-#search {
-    width: 70%;
-    font-size: 18px;
-
-    display: inline;
-}
-
-.search-btn {
-    width: 25%;
-    background-color: steelblue;
-    color: #fff;
-    border: 0;
-    border-radius: 5px;
-    padding: 8px 0;
-}
-
-.search-btn:hover,
-.search-btn:focus {
-    border: 0;
-}
-
-.temperature {
-    font-size: 20px;
-}
-
-.unit {
-    font-size: 20px;
+    font-size: 30px;
 }
 
 ul {
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
-li {
-    font-size: 18px;
-    font-weight: 500;
+ul li .temperature {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+ul li .date,
+ul li .time {
+    font-size: 16px;
+}
+
+.description {
+    display: block;
+    font-size: 22px;
+}
+
+.temperatures {
+    font-size: 20px;
+}
+
+.temperatures .temperature-min {
+    color: #f3f3f3;
 }
 
 .forecast {
-    background-color: darkgray;
+    background-color: rgba(255, 255, 255, 0.1);
     text-align: center;
     color: #000;
     display: flex;
+    font-size: 16px;
+
+    transition: all .5s;
 }
 
-.forecast-inner:hover {
-    background-color: #f7f7f7;
+.forecast:hover {
+    background: #fff0a4;
 }
 
 .forecast-date {
